@@ -1,0 +1,31 @@
+ID,Title,Preconditions,Steps,Expected Result,Priority
+TC-001,Login with valid standard user,Login page open; valid account available,1. Enter standard_user. 2. Enter secret_sauce. 3. Click Login.,User is redirected to inventory; Products heading is visible.,High
+TC-002,Login with locked-out user,Login page open,1. Enter locked_out_user. 2. Enter secret_sauce. 3. Click Login.,Login is blocked and locked-out error is displayed.,High
+TC-003,Login with invalid password,Login page open,1. Enter standard_user. 2. Enter an incorrect password. 3. Click Login.,Authentication fails with a clear error; user remains on login page.,High
+TC-004,Login with unknown username,Login page open,1. Enter unknown_user. 2. Enter secret_sauce. 3. Click Login.,Authentication fails with a clear error.,High
+TC-005,Submit login with both fields empty,Login page open,1. Leave username and password blank. 2. Click Login.,Required username validation is displayed; no navigation occurs.,High
+TC-006,Submit login with empty password,Login page open,1. Enter standard_user. 2. Leave password blank. 3. Click Login.,Required password validation is displayed.,High
+TC-007,Password is masked,Login page open,1. Type secret_sauce in password field.,Password characters are masked.,Med
+TC-008,Login page layout at mobile viewport,Browser viewport set to 390x844,1. Open login page. 2. Inspect form and controls.,"Controls remain visible, readable, and usable without unintended horizontal scrolling.",Med
+TC-009,Inventory displays products,Logged in as standard_user,1. Inspect inventory page.,"Product cards show product name, description, price, image, and action button.",High
+TC-010,Sort products by name ascending,Logged in as standard_user,1. Select Name (A to Z). 2. Read displayed product names.,Names are in ascending alphabetical order.,Med
+TC-011,Sort products by name descending,Logged in as standard_user,1. Select Name (Z to A). 2. Read displayed product names.,Names are in descending alphabetical order.,Med
+TC-012,Sort products by price low to high,Logged in as standard_user,1. Select Price (low to high).,Displayed prices are in ascending numeric order.,Med
+TC-013,Sort products by price high to low,Logged in as standard_user,1. Select Price (high to low).,Displayed prices are in descending numeric order.,Med
+TC-014,Add one product to cart,Logged in as standard_user; inventory visible,1. Click Add to cart for Sauce Labs Backpack.,Button changes to Remove and cart badge shows 1.,High
+TC-015,Remove product from inventory,One product added to cart,1. Click Remove for the selected product.,Button changes to Add to cart and cart badge updates.,High
+TC-016,Add multiple distinct products,Logged in as standard_user,1. Add three different products.,Cart badge shows 3 and each selected item is retained.,High
+TC-017,Open cart and verify contents,At least two known products added,1. Click cart icon.,Cart lists exactly the selected products with correct names and prices.,High
+TC-018,Continue shopping from cart,Cart page open,1. Click Continue Shopping.,User returns to inventory and cart contents remain unchanged.,Med
+TC-019,Remove item from cart page,Cart contains at least one product,1. Click Remove beside one item.,Only the selected item is removed; remaining items stay in cart.,High
+TC-020,Checkout with empty cart,Logged in; cart is empty,1. Open cart. 2. Click Checkout if enabled.,Application prevents an invalid empty-order submission or clearly handles the empty cart.,High
+TC-021,Checkout information page opens,Cart contains one product,1. Click Checkout.,Checkout: Your Information page is displayed.,High
+TC-022,Checkout with all fields populated,Checkout information page open,"1. Enter first name, last name, postal code. 2. Click Continue.",User proceeds to checkout overview.,High
+TC-023,Checkout with missing first name,Checkout information page open,1. Leave first name blank. 2. Fill remaining fields. 3. Click Continue.,Validation message identifies the missing first name; user does not proceed.,High
+TC-024,Checkout with missing last name,Checkout information page open,1. Fill first name and postal code only. 2. Click Continue.,Validation message identifies the missing last name.,High
+TC-025,Checkout with missing postal code,Checkout information page open,1. Fill first and last name only. 2. Click Continue.,Validation message identifies the missing postal code.,High
+TC-026,Checkout overview matches cart,Checkout overview open,"1. Compare item names, quantities and prices with cart.",Overview accurately reflects selected cart items.,High
+TC-027,Checkout subtotal and total calculation,Checkout overview open,"1. Sum displayed item prices. 2. Compare subtotal, tax and total.",Subtotal equals item sum; total equals subtotal plus displayed tax.,High
+TC-028,Cancel checkout from information page,Checkout information page open,1. Click Cancel.,User returns to cart without losing selected items.,Med
+TC-029,Complete order successfully,Checkout overview open with valid order,1. Click Finish.,Confirmation page displays successful order message.,High
+TC-030,Back navigation from checkout overview,Checkout overview open,1. Click Back to cart.,User returns to cart and items remain present.,Med
